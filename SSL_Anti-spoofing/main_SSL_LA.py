@@ -140,9 +140,9 @@ if __name__ == '__main__':
     parser.add_argument('--model_path', type=str,
                         default=None, help='Model checkpoint')
     parser.add_argument('--comment', type=str, default=None,
-                        help='Comment to describe the saved model')
+                        help='Comment to trackdescribe the saved model')
     # Auxiliary arguments
-    parser.add_argument('--track', type=str, default='LA',choices=['LA', 'PA','DF'], help='LA/PA/DF')
+    parser.add_argument('--', type=str, default='LA',choices=['LA', 'PA','DF'], help='LA/PA/DF')
     parser.add_argument('--eval_output', type=str, default=None,
                         help='Path to save the evaluation result')
     parser.add_argument('--eval', action='store_true', default=False,
