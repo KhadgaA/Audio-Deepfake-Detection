@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22635-SP0",
+    "python": "3.10.14",
+    "heartbeatAt": "2024-05-01T11:20:25.558419",
+    "startedAt": "2024-05-01T11:20:23.959676",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\KHADGA JYOTH ALLI\\Desktop\\programming\\Class Work\\IITJ\\Speech Understanding\\Audio Deepfake Detection\\SSL_Anti-spoofing\\Finetune_Speech_A3.py",
+    "codePathLocal": "Finetune_Speech_A3.py",
+    "codePath": "SSL_Anti-spoofing\\Finetune_Speech_A3.py",
+    "git": {
+        "remote": "https://github.com/KhadgaA/Audio-Deepfake-Detection.git",
+        "commit": "923c69d1a3d9ce15f0b0c5d0c8b7893f22259f98"
+    },
+    "email": "khadgajyothalli@gmail.com",
+    "root": "C:/Users/KHADGA JYOTH ALLI/Desktop/programming/Class Work/IITJ/Speech Understanding/Audio Deepfake Detection",
+    "host": "Khadga-Laptop",
+    "username": "Khadga",
+    "executable": "C:\\ProgramData\\Anaconda3\\envs\\speech_env\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3000.0,
+        "min": 0.0,
+        "max": 3000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3000.0,
+            "min": 0.0,
+            "max": 3000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 476.00780868530273,
+            "used": 419.00967025756836
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1650 Ti",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 15.362796783447266
+    }
+}

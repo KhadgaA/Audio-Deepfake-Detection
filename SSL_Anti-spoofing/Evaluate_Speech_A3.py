@@ -9,6 +9,7 @@ from tqdm import tqdm
 from model import Model
 from torch.utils.data import DataLoader
 from torchvision.datasets import DatasetFolder
+from sklearn.metrics import roc_auc_score
 # import torchaudio
 # import torchaudio.functional as tF
 
@@ -51,7 +52,8 @@ parser.add_argument(
 parser.add_argument(
     "--data_dir",
     type=str,
-    default=r"D:\programming\datasets\Dataset_Speech_Assignment\Dataset_Speech_Assignment",
+    default=r"D:\programming\datasets\for-2seconds\testing",
+    #r"D:\programming\datasets\Dataset_Speech_Assignment\Dataset_Speech_Assignment",
     help="path to data directory, the directory should be of form /data/ Real/ voice_sample1.wav voice_sample2.wav ...    /Spoof/ voice_sample1.wav voice_sample2.wav  ...",
 )
 
@@ -98,10 +100,12 @@ model.eval()
 # Evaluate
 bona_score_list = []
 spoof_score_list = []
+true_labels = []
 for data , label in tqdm(data_loader):
     signal ,fs = data
     signal = signal.to(device)
     label = label.to(device)
+    true_labels.extend(label.cpu().numpy().tolist())
     with torch.no_grad():
         output = model(signal)
         batch_out = (output[:, 1]).data.cpu().numpy().ravel()
@@ -113,3 +117,9 @@ for data , label in tqdm(data_loader):
 
 eer = compute_eer(np.array(bona_score_list), np.array(spoof_score_list))[0]
 print(f"EER: {100*eer:.2f}")
+
+# Calculate AUC
+true_labels = np.array(true_labels)
+all_scores = np.concatenate((bona_score_list, spoof_score_list))
+auc = roc_auc_score(true_labels, all_scores)
+print(f"AUC: {auc:.4f}")

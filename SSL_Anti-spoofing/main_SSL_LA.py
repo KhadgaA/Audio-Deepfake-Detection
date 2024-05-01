@@ -94,9 +94,9 @@ def train_epoch(train_loader, model, lr,optim, device):
         
         running_loss += (batch_loss.item() * batch_size)
        
-        optimizer.zero_grad()
+        optim.zero_grad()
         batch_loss.backward()
-        optimizer.step()
+        optim.step()
        
     running_loss /= num_total
     
