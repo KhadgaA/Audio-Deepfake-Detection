@@ -45,15 +45,15 @@ def compute_eer(target_scores, nontarget_scores):
 
 
 parser = argparse.ArgumentParser(description="ASVspoof2021 baseline system")
-parser.add_argument("--model_path", type=str, default='./Best_LA_model_for_DF.pth', help="Model checkpoint")
+parser.add_argument("--model_path", type=str, default='./finetuned_models/DF_FOR_finetune_best.pt', help="Model checkpoint") #'./Best_LA_model_for_DF.pth'
 parser.add_argument(
     "--track", type=str, default="LA", choices=["LA", "PA", "DF"], help="LA/PA/DF"
 )
 parser.add_argument(
     "--data_dir",
     type=str,
-    default=r"/teamspace/studios/this_studio/for-2seconds/testing",
-    #r"D:\programming\datasets\Dataset_Speech_Assignment\Dataset_Speech_Assignment",
+    default=r"D:\programming\datasets\Dataset_Speech_Assignment\Dataset_Speech_Assignment",
+    #r"/teamspace/studios/this_studio/for-2seconds/testing",
     help="path to data directory, the directory should be of form /data/ Real/ voice_sample1.wav voice_sample2.wav ...    /Spoof/ voice_sample1.wav voice_sample2.wav  ...",
 )
 
@@ -92,7 +92,7 @@ model =nn.DataParallel(model).to(device)
 # model = model.to(device)
 print("nb_params:", nb_params)
 
-model.load_state_dict(torch.load(args.model_path, map_location=device))
+model.load_state_dict(torch.load(args.model_path, map_location=device)['model'])
 print("Model loaded : {}".format(args.model_path))
 
 model.eval()
