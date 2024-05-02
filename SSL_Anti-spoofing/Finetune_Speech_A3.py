@@ -68,17 +68,18 @@ parser.add_argument("--model_path", type=str, default='./Best_LA_model_for_DF.pt
 parser.add_argument('--num_epochs', type=int, default=10)
 parser.add_argument('--lr', type=float, default=0.000001)
 parser.add_argument('--weight_decay', type=float, default=0.0001)
-parser.add_argument('--batch_size', type=int, default=4)
+parser.add_argument('--batch_size', type=int, default=16)
+parser.add_argument('--num_workers', type=int, default=4)
 parser.add_argument(
     "--data_dir_train",
     type=str,
-    default=r"D:\programming\datasets\for-2seconds\training",
+    default=r"/teamspace/studios/this_studio/for-2seconds/training",
     help="path to data directory, the directory should be of form /data/ Real/ voice_sample1.wav voice_sample2.wav ...    /Spoof/ voice_sample1.wav voice_sample2.wav  ...",
 )
 parser.add_argument(
     "--data_dir_valid",
     type=str,
-    default=r"D:\programming\datasets\for-2seconds\validation",
+    default=r"/teamspace/studios/this_studio/for-2seconds/validation",
     help="path to data directory, the directory should be of form /data/ Real/ voice_sample1.wav voice_sample2.wav ...    /Spoof/ voice_sample1.wav voice_sample2.wav  ...",
 )
 
@@ -107,11 +108,11 @@ def pad(x, max_len=64600):
     return padded_x	
 
 train_dataset = DatasetFolder(root=args.data_dir_train,extensions=('.wav','.mp3'), loader=load_data)
-train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=False, num_workers=0)
+train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
 print(f'[Train Dataset] samples: {len(train_dataset)}, classes: {train_dataset.classes} , classes_idx: {train_dataset.class_to_idx}, batches: {len(train_loader)}')
 
 valid_dataset = DatasetFolder(root=args.data_dir_valid,extensions=('.wav','.mp3'), loader=load_data)
-valid_loader = DataLoader(valid_dataset, batch_size=4, shuffle=False, num_workers=0)
+valid_loader = DataLoader(valid_dataset, batch_size=4, shuffle=False, num_workers=args.num_workers)
 print(f'[Validation Dataset] samples: {len(valid_dataset)}, classes: {valid_dataset.classes} , classes_idx: {valid_dataset.class_to_idx}, batches: {len(valid_loader)}')
 
 

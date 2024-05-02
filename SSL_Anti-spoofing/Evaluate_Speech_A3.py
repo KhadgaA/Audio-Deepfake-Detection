@@ -52,7 +52,7 @@ parser.add_argument(
 parser.add_argument(
     "--data_dir",
     type=str,
-    default=r"D:\programming\datasets\for-2seconds\testing",
+    default=r"/teamspace/studios/this_studio/for-2seconds/testing",
     #r"D:\programming\datasets\Dataset_Speech_Assignment\Dataset_Speech_Assignment",
     help="path to data directory, the directory should be of form /data/ Real/ voice_sample1.wav voice_sample2.wav ...    /Spoof/ voice_sample1.wav voice_sample2.wav  ...",
 )
