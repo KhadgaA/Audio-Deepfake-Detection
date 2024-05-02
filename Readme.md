@@ -12,11 +12,11 @@ Wandb Run: [Finetuning logs](https://wandb.ai/khadgaa/SSL_Anti-spoofing/runs/clg
 
 * To evaluate the DF model on the custom dataset, please go to `SSL_Anti-spoofing` folder. Then run `Evaluate_Speech_A3.py` file with arguments `--data_dir` set to dataset path.
 * Dataset folder structure:
-
-  > Dataset
-  > | __ Real
-  > | __ Fake
-  >
+```
+   Dataset
+      |__ Real
+      |__ Fake
+```
 * Equal Error Rate (EER): 30.69%
 * Area Under the Curve (AUC): 0.2387
 
@@ -25,11 +25,11 @@ Wandb Run: [Finetuning logs](https://wandb.ai/khadgaa/SSL_Anti-spoofing/runs/clg
 Follow same process as in task 1. Change the `--data_dir` to the testing set of **`for-2seconds`** dataset.
 
 * Dataset folder structure:
-
-  > Dataset
-  > | __ real
-  > | __ fake
-  >
+```
+  Dataset
+  |__ real
+  |__ fake
+```
 * Total samples : 1088
 * Equal Error Rate (EER): 33.27%
 * Area Under the Curve (AUC): 0.2456
