@@ -1,0 +1,54 @@
+wandb_version: 1
+
+model_path:
+  desc: null
+  value: ./Best_LA_model_for_DF.pth
+num_epochs:
+  desc: null
+  value: 10
+lr:
+  desc: null
+  value: 1.0e-06
+weight_decay:
+  desc: null
+  value: 0.0001
+batch_size:
+  desc: null
+  value: 4
+data_dir_train:
+  desc: null
+  value: /teamspace/studios/this_studio/for-2seconds/training
+data_dir_valid:
+  desc: null
+  value: /teamspace/studios/this_studio/for-2seconds/validation
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.10
+    cli_version: 0.16.3
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1714565434.730296
+    t:
+      1:
+      - 1
+      - 41
+      - 50
+      - 55
+      - 64
+      2:
+      - 1
+      - 41
+      - 50
+      - 53
+      - 55
+      - 64
+      3:
+      - 16
+      - 23
+      4: 3.10.10
+      5: 0.16.3
+      8:
+      - 5
+      13: linux-x86_64
